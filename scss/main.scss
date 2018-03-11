@@ -1,7 +1,7 @@
-@import "../css/normalize";
-/*! Custom CSS for Audacity FEWD Project
+@import "../css/normalize"; /*! Custom CSS for Audacity FEWD Project
   | MIT License
   | github.com/bramvanroy/fewd-project-1 */
+
 *,
 *::after,
 *::before {
@@ -10,8 +10,8 @@
 
 body,
 html {
-  width: 100%;
-  min-height: 100%;
+  width: 100vw;
+  min-height: 100vh;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
@@ -45,21 +45,24 @@ body {
   opacity: 0;
   transition: opacity 200ms;
   padding: 1em;
-  background: radial-gradient(ellipse at center, #f5f5f5 0%, #ffffff 100%);
+  background: radial-gradient(ellipse at center, #fff 70%, #eee 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .card-wrapper {
   border: 1px solid #fddd66;
-  background: #f5f5f5;
-  border-radius: 1%;
-  position: relative;
-  margin: 50vh auto;
-  max-height: 95vh;
-  transform: translateY(-50%);
+  border-radius: 2%;
   overflow: hidden;
   background: linear-gradient(65deg, #ddba39 0%,#ffdf68 50%,#ffdf68 50%,#d3ba61 50%,#ffdf68 73%,#d8ca45 100%);
   color: white;
   box-shadow: 0 0 10vw rgba(0, 0, 0, 0.12), 0 0 4vw rgba(0,0,0,.24);
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  min-width: 350px;
 
   &::before {
     display: block;
@@ -75,6 +78,7 @@ body {
     left: 0.48em;
     right: 0.48em;
     bottom: 0.48em;
+    border-radius: 1%;
     display: flex;
     flex-direction: column;
     background: radial-gradient(ellipse at center, #7f6858 0%, #65534d 48%, #452a1f 100%);
@@ -94,6 +98,7 @@ body {
 
     header {
       flex: 0 0 auto;
+      position: relative;
 
       h3 {
         line-height: 1.6;
@@ -110,7 +115,7 @@ body {
         z-index: 3;
         border-radius: 0 0.4em 0.4em 0;
         left: 0;
-        top: 10vh;
+        top: 160%;
         background: linear-gradient(65deg, #8a5693 0%, #d251f2 50%, #b22cea 51%, #bf6dd2 100%);
         padding: 0.24em 0.67em;
 
@@ -131,8 +136,8 @@ body {
       overflow: hidden;
       box-shadow: 0 0.5vh 2vw rgba(0, 0, 0, 0.24);
       flex: 0 0 36%;
-      width: 80%;
-      margin: 0 auto 0.87em;
+      width: 88%;
+      margin: 0 auto;
       background: linear-gradient(65deg, #ddba39 0%,#ffdf68 50%,#ffdf68 50%,#d3ba61 50%,#ffdf68 73%,#d8ca45 100%);
 
       &::before {
@@ -159,8 +164,8 @@ body {
     }
 
     .content {
-      flex: 1;
-      padding: 0 0.87em 0.87em;
+      flex-shrink: 0;
+      padding: 6%;
       font-size: 13px;
       text-shadow: -1px 1px rgba(0,0,0,.24);
 
@@ -192,7 +197,7 @@ body {
     }
   }
 }
-@media screen and (min-width: 375px) {
+@media screen and (min-width: 400px) {
   .card-wrapper > main .content > p:first-child {
     display: block;
   }
@@ -201,8 +206,60 @@ body {
     font-size: 12px;
   }
 }
-@media screen and (min-width: 400px) {
+@media screen and (min-width: 420px) {
   .card-wrapper > main .content {
     font-size: 13px;
+  }
+}
+@media screen and (min-width: 460px) {
+  .card-wrapper > main .content {
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 480px) {
+  .card-wrapper > main {
+    .content,
+    header > span {
+      font-size: 15px;
+    }
+
+    header h3 {
+      font-size: 28px;
+    }
+  }
+}
+@media screen and (min-width: 520px) {
+  .card-wrapper > main header {
+    margin-bottom: 1%;
+  }
+
+  .card-wrapper > main .content {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 540px) {
+  .card-wrapper > main .content {
+    font-size: 17px;
+  }
+}
+@media screen and (min-width: 580px) {
+  .card-wrapper > main {
+    .content,
+    header > span {
+      font-size: 18px;
+    }
+  }
+}
+@media screen and (min-width: 600px) {
+  .card-wrapper > main {
+    .content {
+      p:last-child {
+        font-size: 100%;
+      }
+    }
+
+    header h3 {
+      font-size: 36px;
+    }
   }
 }
