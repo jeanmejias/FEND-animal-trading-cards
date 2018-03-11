@@ -65,12 +65,14 @@ body {
   width: 100%;
   max-width: 600px;
   min-width: 320px;
-
+  /* NOT responsive */
+  width: 372px;
+  /* -- */
   &::before {
     display: block;
     content: "";
     width: 100%;
-    /* Approximation of trading card ratio */
+    /* Approximation of trading card ratio */ 
     padding-top: 139%;
   }
 
@@ -162,12 +164,18 @@ body {
         width: 100%;
         height: 100%;
         display: block;
+        /* NOT responsive */
+        width: 300px;
+        /* -- */
       }
     }
 
     .content {
       flex-shrink: 0;
-      padding: 6%;
+      /* In case of responsiveness
+       padding: 6%;
+       -- */
+      padding: 4%;
       font-size: 13px;
       text-shadow: -1px 1px rgba(0,0,0,.24);
 
@@ -179,10 +187,12 @@ body {
         margin-bottom: 0;
       }
 
+
+      /* In case of responsiveness
       p:first-child {
         display: none;
       }
-
+      */
       p:last-child {
         font-size: 89%;
       }
@@ -222,6 +232,8 @@ body {
     }
   }
 }
+
+/* In case of responsiveness
 @media screen and (min-width: 400px) {
   .card-wrapper > main .content > p:first-child {
     display: block;
@@ -298,3 +310,4 @@ body {
     }
   }
 }
+*/
