@@ -1,0 +1,2 @@
+"use strict";document.addEventListener("DOMContentLoaded",function(){var t=document.querySelector("body");t.querySelector(".display-options").addEventListener("click",function(e){if(e.target.matches("button, button *")){e.stopPropagation();var o=e.target.matches("button")?e.target:e.target.closest("button");!function(e){t.classList.remove("fixed","responsive"),t.classList.add(e),t.querySelectorAll(".display-options button").forEach(function(t){t.classList.remove("active")})}(o.getAttribute("data-option")),o.classList.add("active")}})});
+//# sourceMappingURL=main-dist.js.map

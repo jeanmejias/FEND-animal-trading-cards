@@ -402,6 +402,63 @@ body {
   padding: 4vw;
 }
 
+button {
+  cursor: pointer;
+}
+
+button.active {
+  cursor: auto;
+}
+
+button:focus {
+  outline: 0;
+}
+
+.display-options {
+  margin: 0 auto 24px;
+  padding: 0;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.display-options ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.display-options button {
+  font-size: 14px;
+  font-weight: 300;
+  color: white;
+  min-width: 48px;
+  min-height: 36px;
+  padding: 0 1em;
+  background-color: #cd52eb;
+  border: 1px solid #993cbb;
+}
+
+.display-options button.active, .display-options button:hover {
+  background-color: #993cbb;
+}
+
+.display-options button:active {
+  background-color: #86449e;
+}
+
+.display-options li:first-child button {
+  border-radius: 4px 0 0 4px;
+  border-right: 0 none;
+}
+
+.display-options li:last-child button {
+  border-radius: 0 4px 4px 0;
+}
+
 .card-wrapper {
   border: 1px solid #fddd66;
   border-radius: 2%;
@@ -412,7 +469,6 @@ body {
   -webkit-box-shadow: 0 0 10vw rgba(0, 0, 0, 0.12), 0 0 4vw rgba(0, 0, 0, 0.24);
   box-shadow: 0 0 10vw rgba(0, 0, 0, 0.12), 0 0 4vw rgba(0, 0, 0, 0.24);
   position: relative;
-  width: 100%;
   max-width: 600px;
   min-width: 320px;
   /* NOT responsive */
@@ -538,25 +594,15 @@ body {
   width: 100%;
   height: 100%;
   display: block;
-  /* NOT responsive */
   width: 300px;
-  /* -- */
 }
 
 .card-wrapper > main .content {
   -ms-flex-negative: 0;
   flex-shrink: 0;
-  /* In case of responsiveness
-       padding: 6%;
-       -- */
   padding: 4%;
   font-size: 13px;
   text-shadow: -1px 1px rgba(0, 0, 0, 0.24);
-  /* In case of responsiveness
-      p:first-child {
-        display: none;
-      }
-      */
 }
 
 .card-wrapper > main .content > *:first-child {
@@ -581,11 +627,27 @@ body {
   font-weight: 700;
 }
 
+body.responsive .card-wrapper {
+  width: 100%;
+}
+
+body.responsive .card-wrapper > main .hero img {
+  width: 100%;
+}
+
+body.responsive .card-wrapper > main .content {
+  padding: 6%;
+}
+
+body.responsive .card-wrapper > main .content > p:first-child {
+  display: none;
+}
+
 .gh-links {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  margin-top: 12px;
+  margin-top: 24px;
   text-align: center;
   font-size: 14px;
 }
@@ -605,83 +667,72 @@ body {
   color: inherit;
 }
 
-/* In case of responsiveness
 @media screen and (min-width: 400px) {
-  .card-wrapper > main .content > p:first-child {
+  body.responsive .card-wrapper > main .content > p:first-child {
     display: block;
   }
-
-  .card-wrapper > main .content {
+  body.responsive .card-wrapper > main .content {
     font-size: 12px;
   }
 }
+
 @media screen and (min-width: 420px) {
-  .card-wrapper > main .content {
+  body.responsive .card-wrapper > main .content {
     font-size: 13px;
   }
 }
+
 @media screen and (min-width: 460px) {
-  .card-wrapper > main .content {
+  body.responsive .card-wrapper > main .content {
     font-size: 14px;
   }
 }
+
 @media screen and (min-width: 480px) {
-  .card-wrapper > main {
-    .content,
-    header > span {
-      font-size: 15px;
-    }
-
-    header h3 {
-      font-size: 28px;
-    }
+  body.responsive .card-wrapper > main .content,
+  body.responsive .card-wrapper > main header > span {
+    font-size: 15px;
   }
-
-  .gh-links {
-    span {
-      display: inline;
-
-      &:last-child::before {
-        content: " | ";
-      }
-    }
+  body.responsive .card-wrapper > main header h3 {
+    font-size: 28px;
+  }
+  body.responsive .gh-links span {
+    display: inline;
+  }
+  body.responsive .gh-links span:last-child::before {
+    content: " | ";
   }
 }
+
 @media screen and (min-width: 520px) {
-  .card-wrapper > main header {
+  body.responsive .card-wrapper > main header {
     margin-bottom: 1%;
   }
-
-  .card-wrapper > main .content {
+  body.responsive .card-wrapper > main .content {
     font-size: 16px;
   }
 }
+
 @media screen and (min-width: 540px) {
-  .card-wrapper > main .content {
+  body.responsive .card-wrapper > main .content {
     font-size: 17px;
   }
 }
-@media screen and (min-width: 580px) {
-  .card-wrapper > main {
-    .content,
-    header > span {
-      font-size: 18px;
-    }
-  }
-}
-@media screen and (min-width: 620px) {
-  .card-wrapper > main {
-    .content {
-      p:last-child {
-        font-size: 100%;
-      }
-    }
 
-    header h3 {
-      font-size: 36px;
-    }
+@media screen and (min-width: 580px) {
+  body.responsive .card-wrapper > main .content,
+  body.responsive .card-wrapper > main header > span {
+    font-size: 18px;
   }
 }
-*/
+
+@media screen and (min-width: 620px) {
+  body.responsive .card-wrapper > main .content p:last-child {
+    font-size: 100%;
+  }
+  body.responsive .card-wrapper > main header h3 {
+    font-size: 36px;
+  }
+}
 
 /*# sourceMappingURL=main.css.map */
